@@ -34,6 +34,8 @@
 	<!-- directory that contains packed archives, such as the .war -->
 	<property name="dist.home" value="dist" />
 	
+	
+	
 	<!-- path to the .jar file that shall be created -->
 	<property name="jar.editor" value="${dist.home}/GoldenGATE.jar" />
 	
@@ -60,4 +62,108 @@
 	
 	<!-- path to the application .zip file that shall be created -->
 	<property name="app.cpacker" value="${dist.home}/ConfigurationPacker.zip" />
+	
+	
+	
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.analyzers" value="${dist.home}/Plugins/Analyzer.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.analyzers.characternormalizer" value="${dist.home}/Plugins/AnalyzerData/CharacterNormalizer.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.annotationpatterns" value="${dist.home}/Plugins/AnnotionPattern.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.annotators" value="${dist.home}/Plugins/Annotator.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.batch" value="${dist.home}/Plugins/Batch.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.docformat.arff" value="${dist.home}/Plugins/ArffDocFormat.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.docformat.encoding" value="${dist.home}/Plugins/CustomEncodingDocFormat.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.docformat.gamta" value="${dist.home}/Plugins/GamtaDocFormat.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.docformat.html" value="${dist.home}/Plugins/HtmlDocFormat.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.docformat.text" value="${dist.home}/Plugins/TextDocFormat.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.docformat.xslt" value="${dist.home}/Plugins/XsltDocFormat.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.docio.file" value="${dist.home}/Plugins/FileDocumentIO.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.docio.web" value="${dist.home}/Plugins/WebDocumentIO.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.sgmlreader" value="${dist.home}/Plugins/SgmlReader.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.sgmlwriter" value="${dist.home}/Plugins/SgmlWriter.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.docviewer" value="${dist.home}/Plugins/DocumentView.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.docviewer.tree" value="${dist.home}/Plugins/TreeViewAnnotations.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.docviewer.nav" value="${dist.home}/Plugins/NavigateAnnotations.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.docviewer.select" value="${dist.home}/Plugins/SelectAnnotations.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.docviewer.slide" value="${dist.home}/Plugins/SlideAnnotations.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.editorextension.nav" value="${dist.home}/Plugins/DocumentNavigator.jar.off" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.translator" value="${dist.home}/Plugins/GuiTranslator.jar.off" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.feedback" value="${dist.home}/Plugins/FlaggedFeedback.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.filtered" value="${dist.home}/Plugins/FilteredDP.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.gpath" value="${dist.home}/Plugins/GPath.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.gscript" value="${dist.home}/Plugins/GScript.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.lists" value="${dist.home}/Plugins/List.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.markupconverters" value="${dist.home}/Plugins/MarkupConverter.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.multilists" value="${dist.home}/Plugins/MultiList.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.parameterized" value="${dist.home}/Plugins/ParameterizedDP.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.docformat.pdf" value="${dist.home}/Plugins/PdfDocFormat.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.pipelines" value="${dist.home}/Plugins/Pipeline.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.reasoners" value="${dist.home}/Plugins/Reasoner.jar" />
+
+	<!-- path to the .jar file that shall be created -->
+	<property name="jar.regexes" value="${dist.home}/Plugins/RegEx.jar" />
 </project>

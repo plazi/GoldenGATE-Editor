@@ -5,7 +5,7 @@
 -->
 
 <project name="dist">
-	<target name="zips" depends="editorzip,vpackerzip,cpackerzip">
+	<target name="zips" depends="editorzip,vpackerzip,cpackerzip,plugins">
 	</target>
 	
 	
@@ -118,5 +118,457 @@
 			<fileset dir="${dist.home}/" includes="_ConfigurationPacker.jar"/>
 			<fileset dir="." includes="LICENSE.txt"/>
 		</zip>
+	</target>
+	
+	
+	
+	<target name="plugins" depends="analyzersjar,characternormalizerjar,annotationpatternsjar,annotatorsjar,batchjar,sgmlreaderjar,sgmlwriterjar,filteredjar,gpathjar,gscriptjar,listsjar,markupconvertersjar,multilistsjar,parameterizedjar,pipelinesjar,reasonersjar,regexesjar,feedbackjar,docviewerjar,docviewertreejar,docviewernavjar,docviewerselectjar,docviewerslidejar,dociofilejar,dociowebjar,editorextensionnavjar,translatorjar,docformatarffjar,docformatencodingjar,docformatgamtajar,docformathtmljar,docformattextjar,docformatxsltjar,docformatpdfjar">
+	</target>
+	
+	<target name="analyzersjar">
+		<delete file="${jar.analyzers}" />
+		<jar destfile="${jar.analyzers}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/analyzers/*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/analyzers/*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="characternormalizerjar">
+		<delete file="${jar.analyzers.characternormalizer}" />
+		<jar destfile="${jar.analyzers.characternormalizer}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/analyzers/builtin/*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/analyzers/builtin/*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="annotationpatternsjar">
+		<delete file="${jar.annotationpatterns}" />
+		<jar destfile="${jar.annotationpatterns}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/annotationPatterns/*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/annotationPatterns/*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="annotatorsjar">
+		<delete file="${jar.annotators}" />
+		<jar destfile="${jar.annotators}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/annotators/*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/annotators/*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="batchjar">
+		<delete file="${jar.batch}" />
+		<jar destfile="${jar.batch}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/batches/*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/batches/*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="sgmlreaderjar">
+		<delete file="${jar.sgmlreader}" />
+		<jar destfile="${jar.sgmlreader}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/documentReaders/*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/documentReaders/*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="sgmlwriterjar">
+		<delete file="${jar.sgmlwriter}" />
+		<jar destfile="${jar.sgmlwriter}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/documentWriters/*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/documentWriters/*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="feedbackjar">
+		<delete file="${jar.feedback}" />
+		<jar destfile="${jar.feedback}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/feedbackService/*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/feedbackService/*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="filteredjar">
+		<delete file="${jar.filtered}" />
+		<jar destfile="${jar.filtered}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/filteredProcessor/*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/filteredProcessor/*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="gpathjar">
+		<delete file="${jar.gpath}" />
+		<jar destfile="${jar.gpath}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/gPaths/*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/gPaths/*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="gscriptjar">
+		<delete file="${jar.gscript}" />
+		<jar destfile="${jar.gscript}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/gScript/*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/gScript/*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="listsjar">
+		<delete file="${jar.lists}" />
+		<jar destfile="${jar.lists}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/lists/*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/lists/*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="markupconvertersjar">
+		<delete file="${jar.markupconverters}" />
+		<jar destfile="${jar.markupconverters}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/markupConverters/*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/markupConverters/*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="multilistsjar">
+		<delete file="${jar.multilists}" />
+		<jar destfile="${jar.multilists}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/multiLists/*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/multiLists/*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="parameterizedjar">
+		<delete file="${jar.parameterized}" />
+		<jar destfile="${jar.parameterized}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/parameterizedProcessors/*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/parameterizedProcessors/*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="pipelinesjar">
+		<delete file="${jar.pipelines}" />
+		<jar destfile="${jar.pipelines}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/pipelines/*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/pipelines/*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="reasonersjar">
+		<delete file="${jar.reasoners}" />
+		<jar destfile="${jar.reasoners}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/reasoners/*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/reasoners/*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="regexesjar">
+		<delete file="${jar.regexes}" />
+		<jar destfile="${jar.regexes}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/regExes/*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/regExes/*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	
+	<target name="docviewerjar">
+		<delete file="${jar.docviewer}" />
+		<jar destfile="${jar.docviewer}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/documentViewer/DocumentViewManager*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/documentViewer/DocumentViewManager.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="docviewertreejar">
+		<delete file="${jar.docviewer.tree}" />
+		<jar destfile="${jar.docviewer.tree}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/documentViewer/AnnotationTreeViewer*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/documentViewer/AnnotationTreeViewer.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="docviewernavjar">
+		<delete file="${jar.docviewer.nav}" />
+		<jar destfile="${jar.docviewer.nav}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/documentViewer/NavigateAnnotationsViewer*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/documentViewer/NavigateAnnnotationsViewer.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="docviewerselectjar">
+		<delete file="${jar.docviewer.select}" />
+		<jar destfile="${jar.docviewer.select}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/documentViewer/SelectAnnotationsViewer*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/analyzers/SelectAnnotationsViewer.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="docviewerslidejar">
+		<delete file="${jar.docviewer.slide}" />
+		<jar destfile="${jar.docviewer.slide}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/documentViewer/SlideAnnotationsViewer*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/documentViewer/SlideAnnotationsViewer*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	
+	<target name="dociofilejar">
+		<delete file="${jar.docio.file}" />
+		<jar destfile="${jar.docio.file}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/documentIO/FileDocumentIO*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/documentIO/FileDocumentIO.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="dociowebjar">
+		<delete file="${jar.docio.web}" />
+		<jar destfile="${jar.docio.web}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/documentIO/WebDocumentIO*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/documentIO/WebDocumentIO.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	
+	<target name="editorextensionnavjar">
+		<delete file="${jar.editorextension.nav}" />
+		<jar destfile="${jar.editorextension.nav}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/editorExtensions/DocumentNavigator*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/editorExtensions/DocumentNavigator.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	
+	<target name="translatorjar">
+		<delete file="${jar.translator}" />
+		<jar destfile="${jar.translator}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/guiTranslator/*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/guiTranslator/*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	
+	<target name="docformatarffjar">
+		<delete file="${jar.docformat.arff}" />
+		<jar destfile="${jar.docformat.arff}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/documentFormats/ArffDocumentFormatter*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/documentFormats/ArffDocumentFormatter.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="docformatencodingjar">
+		<delete file="${jar.docformat.encoding}" />
+		<jar destfile="${jar.docformat.encoding}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/documentFormats/CustomEncodingDocumentFormatter*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/documentFormats/CustomEncodingDocumentFormatter.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="docformatgamtajar">
+		<delete file="${jar.docformat.gamta}" />
+		<jar destfile="${jar.docformat.gamta}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/documentFormats/GamtaDocumentFormatter*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/documentFormats/GamtaDocumentFormatter.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="docformathtmljar">
+		<delete file="${jar.docformat.html}" />
+		<jar destfile="${jar.docformat.html}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/documentFormats/HtmlDocumentFormatter*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/documentFormats/HtmlDocumentFormatter.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="docformattextjar">
+		<delete file="${jar.docformat.text}" />
+		<jar destfile="${jar.docformat.text}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/documentFormats/TextDocumentFormatter*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/documentFormats/TextDocumentFormatter.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="docformatxsltjar">
+		<delete file="${jar.docformat.xslt}" />
+		<jar destfile="${jar.docformat.xslt}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/documentFormats/XsltOutputFormatter*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/documentFormats/XsltOutputFormatter.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
+	</target>
+	
+	<target name="docformatpdfjar">
+		<delete file="${jar.docformat.pdf}" />
+		<jar destfile="${jar.docformat.pdf}" manifest="${file.home}/MANIFEST.plugins.MF">
+			<fileset dir="${build.home}/classes">
+				<include name="**/goldenGate/plugin/pdf/*.class" />
+			</fileset>
+			<fileset dir="${src.home}">
+				<include name="**/goldenGate/plugin/pdf/*.java" />
+			</fileset>
+			<fileset dir="." includes="LICENSE.txt"/>
+		</jar>
 	</target>
 </project>
