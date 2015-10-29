@@ -1,0 +1,263 @@
+<html><head><title>Reasoners</title></head><body><h3><font face="Verdana">The Reasoners</font></h3><font face="Verdana" size="2">Reasoners
+are Annotation sources that use existing Annotations to create new ones.</font>
+<h4><font face="Verdana">The Reasoners Menu</font></h4>
+<font face="Verdana" size="2">The Markup Converters menu provides access to
+functions for managing and applying Markup Converters, and access to a set of
+functions for direct markup conversion:</font>
+<ul>
+  <li><font face="Verdana" size="2"><b>Environment Reasoning:</b>&nbsp;Do
+    reasoning over the Tokens neighboring Annotations of a particular type,
+    comparing them to the neighboring Tokens of Annotations of another type.</font></li>
+  <li><font face="Verdana" size="2"><b>Value Reasoning:</b>&nbsp;Do reasoning
+    over the values of Annotations of a particular type (the value of an
+    Annotation is the text it encloses), finding new occurences of these values
+    in the document.</font></li>
+  <li><font face="Verdana" size="2"><b>Clone Annotations:</b>&nbsp;Clone
+    Annotations of a particular type, leaving aside other occurences of their
+    values.</font></li>
+  <li><font face="Verdana" size="2"><b>Value Environment Reasoning:</b>&nbsp;Combination
+    of value and environment reasoning, can be applied iteratively.</font></li>
+  <li><font face="Verdana" size="2"><b>Token Fraction Reasoning:</b>&nbsp;Do
+    reasoning based on the individual Tokens enclosed in Annotations of a
+    particular type, targeting Annotations of another type, regarding the
+    fraction of Tokens enclosed by them that was also enclosed by Annotations of
+    the first type.</font></li>
+  <li><font face="Verdana" size="2"><b>Token Sequence Reasoning:</b>&nbsp;</font><font face="Verdana" size="2">Do
+    reasoning based on the individual Tokens enclosed in Annotations of a
+    particular type, finding new sequences of these Tokens.</font></li>
+  <li><font face="Verdana" size="2"><b>Join Annotations:</b>&nbsp;Join
+    neighboring Annotations of the same type.</font></li>
+  <li><font face="Verdana" size="2"><b>Apply:</b>&nbsp;Apply some sort of
+    reasoning to the document currently selected. This function is also
+    available through the&nbsp;<b>Apply Reasoner </b>option in the Tools menu.
+    Since there is only one Reasoner that acts in different ways, there is no
+    selection list for Reasoners.</font></li>
+</ul>
+<h4><font face="Verdana">The Apply Reasoner Dialog</font></h4>
+<font face="Verdana" size="2">The dialog for Annotation reasoning pops up
+whenever reasoning is to be applied. It collects the necessary parameters for
+the particular reasoning mode selected, or additionally allows selecting the
+reasoning mode by choosing the coresponding parameter tab if no reasoning mode
+is selected initially.</font>
+<h4><font face="Verdana">Environment Reasoning</font></h4>
+<font face="Verdana" size="2">Environment reasoning makes use of Tokens
+neighboring the Annotations of a particular source type for qualifying
+Annotations of a particular target type, which is different from the source type.
+In particular, an Annotation of the target type is qualified if it has the same
+environment as some Annotation of the source type. Environment reasoning uses
+the following parameters:</font>
+<ul>
+  <li><b><font face="Verdana" size="2">Source Type:</font></b><font face="Verdana" size="2">&nbsp;The
+    type of the Annotations to collect the environments from.</font></li>
+  <li><b><font face="Verdana" size="2">Case Sensitive:</font></b><font face="Verdana" size="2">&nbsp;Match
+    the environments case sensitive or case insensitive.</font></li>
+  <li><b><font face="Verdana" size="2">Symmetric Environment:</font></b><font face="Verdana" size="2">&nbsp;If
+    checked, use the same number of Tokens to the left and right of the source
+    type Annotations. Otherwise, use the Left Tokens and Right Tokens numbers.</font></li>
+  <li><b><font face="Verdana" size="2">Env(ironment) Tokens:</font></b><font face="Verdana" size="2">&nbsp;For
+    symmetric environments, the number of Tokens to collect to the left and
+    right of the source type Annotations.</font></li>
+  <li><b><font face="Verdana" size="2">Left Tokens:</font></b><font face="Verdana" size="2">&nbsp;For
+    non-symmetric environments, the number of Tokens to collect to the left of
+    the source type Annotations.</font></li>
+  <li><b><font face="Verdana" size="2">Right Tokens:</font></b><font face="Verdana" size="2">&nbsp;For
+    non-symmetric environments, the number of Tokens to collect to the right of
+    the source type Annotations.</font></li>
+  <li><b><font face="Verdana" size="2">Target Type:</font></b><font face="Verdana" size="2">&nbsp;The
+    type of Annotations whose environments to compare to the environments of the
+    source type Annotations.</font></li>
+</ul>
+<font face="Verdana" size="2"><b>Example:</b> Assume using 2-Token symmertric
+environments of &quot;location&quot; Annotations for reasoning over &quot;properName&quot;
+Annotations. Further assume the following two sentences from some document (Annotations
+marked with XML tags):<br>
+&nbsp; &quot;When John F. Kennedy came to &lt;location&gt;Washinghton&lt;/location&gt;,
+he was the first catholic to become president of the US.&quot;<br>
+&nbsp; &quot;When Adenauer first came to &lt;properName&gt;Bonn&lt;/properName&gt;,
+he had just survived the war.&quot;<br>
+The 2-Token symmetric environment of &quot;Washington&quot; is &quot;came to ,
+he&quot;. Since this matches the 2-Token symmetric environment of
+&quot;Bonn&quot;, the Reasoner would conclude that &quot;Bonn&quot; is a
+location, just as &quot;Washington&quot;.</font>
+<h4><font face="Verdana">Value Reasoning</font></h4>
+<font face="Verdana" size="2">Value reasoning extracts the values of Annotations
+of a particular source type (the value of an Annotation is the text it encloses)
+and annotates all occurences of these values in the document. Value reasoning
+uses only two parameters:</font>
+<ul>
+  <li><b><font face="Verdana" size="2">Source Type:</font></b><font face="Verdana" size="2">&nbsp;The
+    type of the Annotations to collect the values from.</font></li>
+  <li><b><font face="Verdana" size="2">Case Sensitive:</font></b><font face="Verdana" size="2">&nbsp;Match
+    the values case sensitive or case insensitive.</font></li>
+</ul>
+<font face="Verdana" size="2"><b>Example:</b> Assume value reasoning on &quot;location&quot;
+Annotations in the following two sentences from some document (Annotations
+marked with XML tags):<br>
+&nbsp; &quot;Every child knows that &lt;location&gt;Washinghton&lt;/location&gt;
+is the capital of the USA.&quot;<br>
+&nbsp; &quot;When John F. Kennedy came to Washinghton, he was the first catholic
+to become president of the US.&quot;<br>
+Since &quot;Washington&quot; is annotated as a location in the first sentence,
+it would be annotated as a location in the second sentence as well.</font>
+<h4><font face="Verdana">Annotation Cloning</font></h4>
+<font face="Verdana" size="2">Annotation cloning simply duplicates the existing
+Annotations of a given type. Value reasoning
+uses only one parameter:</font>
+<ul>
+  <li><b><font face="Verdana" size="2">Source Type:</font></b><font face="Verdana" size="2">&nbsp;The
+    type of the Annotations to clone.</font></li>
+</ul>
+<b><font face="Verdana" size="2">Case Sensitive</font></b><font face="Verdana" size="2">&nbsp;is
+also displayed because it is necessary for all other reasoning modes, but has no
+influence.</font>
+<h4><font face="Verdana">Value / Environment Reasoning</font></h4>
+<font face="Verdana" size="2">Value / environment reasoning combines the two
+previous reasoning modes and applies them iteratively for a given number of
+rounds or until nither of them produces any new Annotations. It takes the same
+parameters as environment reasoning, plus the number of rounds:</font>
+<ul>
+  <li><b><font face="Verdana" size="2">Source Type:</font></b><font face="Verdana" size="2">&nbsp;The
+    type of the Annotations to collect the environments from.</font></li>
+  <li><b><font face="Verdana" size="2">Case Sensitive:</font></b><font face="Verdana" size="2">&nbsp;Match
+    the environments case sensitive or case insensitive.</font></li>
+  <li><b><font face="Verdana" size="2">Symmetric Environment:</font></b><font face="Verdana" size="2">&nbsp;If
+    checked, use the same number of Tokens to the left and right of the source
+    type Annotations. Otherwise, use the Left Tokens and Right Tokens numbers.</font></li>
+  <li><b><font face="Verdana" size="2">Env(ironment) Tokens:</font></b><font face="Verdana" size="2">&nbsp;For
+    symmetric environments, the number of Tokens to collect to the left and
+    right of the source type Annotations.</font></li>
+  <li><b><font face="Verdana" size="2">Left Tokens:</font></b><font face="Verdana" size="2">&nbsp;For
+    non-symmetric environments, the number of Tokens to collect to the left of
+    the source type Annotations.</font></li>
+  <li><b><font face="Verdana" size="2">Right Tokens:</font></b><font face="Verdana" size="2">&nbsp;For
+    non-symmetric environments, the number of Tokens to collect to the right of
+    the source type Annotations.</font></li>
+  <li><b><font face="Verdana" size="2">Rounds:</font></b><font face="Verdana" size="2">&nbsp;Maximum
+    number of iterations. Setting it to 0 will cause the reasoner to iterate
+    until nither the value reasoning not the environment reasoning produces any
+    new Annotations.</font></li>
+  <li><b><font face="Verdana" size="2">Target Type:</font></b><font face="Verdana" size="2">&nbsp;The
+    type of Annotations whose environments to compare to the environments of the
+    source type Annotations.</font></li>
+</ul>
+<font face="Verdana" size="2"><b>Example:</b> Assume using 2-Token symmertric
+environments of &quot;location&quot; Annotations for reasoning over &quot;properName&quot;
+Annotations. Further assume the following three sentences from some document (Annotations
+marked with XML tags):<br>
+&nbsp; &quot;Every child knows that &lt;location&gt;Washinghton&lt;/location&gt;
+is the capital of the USA.&quot;<br>
+&nbsp; &quot;When John F. Kennedy came to Washinghton, he was the first catholic
+to become president of the US.&quot;<br>
+&nbsp; &quot;When Adenauer first came to &lt;properName&gt;Bonn&lt;/properName&gt;,
+he had just survived the war.&quot;<br>
+Since &quot;Washington&quot; is annotated as a location in the first sentence,
+it will be annotated as a location in the second sentence as well. Then the
+2-Token symmetric environments of &quot;Washington&quot; are &quot;knows that is
+the&quot; and &quot;came to , he&quot;. Since the second one matches the 2-Token
+symmetric environment of &quot;Bonn&quot;, the Reasoner would conclude that
+&quot;Bonn&quot; is also a location, just as &quot;Washington&quot;. In the
+second round, the value reasoning would mmark every occurrence of
+&quot;Bonn&quot; as a location, leading to new environments for the next
+application of the environmental reasoning, leading to some new values again,
+and so on.</font>
+<h4><font face="Verdana">Token Fraction Reasoning</font></h4>
+<font face="Verdana" size="2">Token fraction reasoning uses the individual
+Tokens enclosed by Annotations of a particular source type to qualify the
+Annotations of of a particular target type, which is different from the source
+type. In particular, an Annotation of the target type is qualified if a given
+percentage of the Tokens enclosed in it were also enclosed in some Annotation of
+the source type. Token fraction reasoning needs four parameters:</font>
+<ul>
+  <li><b><font face="Verdana" size="2">Source Type:</font></b><font face="Verdana" size="2">&nbsp;The
+    type of the Annotations to collect the Tokens from.</font></li>
+  <li><b><font face="Verdana" size="2">Case Sensitive:</font></b><font face="Verdana" size="2">&nbsp;Match
+    the Tokens case sensitive or case insensitive.</font></li>
+  <li><b><font face="Verdana" size="2">Min % Known Tokens:</font></b><font face="Verdana" size="2">&nbsp;Percentage
+    of Tokens of a target type Annotation that have to be in some source type
+    Annotation for the target type Annotation to qualify.</font></li>
+  <li><b><font face="Verdana" size="2">Target Type:</font></b><font face="Verdana" size="2">&nbsp;The
+    type of Annotations whose Tokens to compare to the Tokens collected from the
+    source type Annotations.</font></li>
+</ul>
+<font face="Verdana" size="2"><b>Example:</b> Assume applying Token fraction
+reasoning to the text passage below, using &quot;person&quot; Annotations as the
+source type, and targeting Annotations of type &quot;properName&quot; (Annotations
+marked with XML tags):<br>
+&nbsp; &quot;&lt;person&gt;Marilyn Monroe&lt;/person&gt; once was the playmate
+of &lt;person&gt;John F. Kennedy&lt;/person&gt;. I have read that at the
+bookstore of &lt;properName&gt;John Monroe&lt;properName&gt; around the corner.&quot;<br>
+The Tokens collected from the &quot;person&quot; Annotations would be
+{&quot;F&quot;, &quot;John&quot;, &quot;Kennedy&quot;, &quot;Merilyn&quot;,
+&quot;Monroe&quot;}. Since both &quot;John&quot; and &quot;Monroe&quot;, the
+Tokens from the &quot;properName&quot; Annotation &quot;John Monroe&quot;, are
+contained in this set, the Reasoner would conclude that &quot;John Monroe&quot;
+is a person, just as &quot;Merilyn Monroe&quot; and &quot;John F. Kennedy&quot;.</font>
+<h4><font face="Verdana">Token Sequence Reasoning</font></h4>
+<font face="Verdana" size="2">Token sequence reasoning collects the Tokens
+enclosed in Annotations of a particular source type (referred to as <b>known
+Tokens</b> in the following) and annotates other combinations of these Tokens
+that occure elsewhere in the document. It can also span a small number of <b>unknown
+Tokens</b> (ones that were not enclosed in an Annotation of the source type) if
+they stand between to known ones, and it can use a gazetteer list to filter
+these unknown Tokens. The parameters for Token sequence reasoning are:</font>
+<ul>
+  <li><b><font face="Verdana" size="2">Source Type:</font></b><font face="Verdana" size="2">&nbsp;The
+    type of the Annotations to collect the known Tokens from.</font></li>
+  <li><b><font face="Verdana" size="2">Case Sensitive:</font></b><font face="Verdana" size="2">&nbsp;Match
+    the Tokens case sensitive or case insensitive.</font></li>
+  <li><b><font face="Verdana" size="2">Max Tokens to Span:</font></b><font face="Verdana" size="2">&nbsp;Maximum
+    number of unknown Tokens to span if standing between two known ones.</font></li>
+  <li><b><font face="Verdana" size="2">Token List:</font></b><font face="Verdana" size="2">&nbsp;Gazetteer
+    list (see Lists) for filtering the unknown Tokens (relevant only if prevoius
+    parameter &gt; 0).</font></li>
+  <li><b><font face="Verdana" size="2">Use List for Inclusion:</font></b><font face="Verdana" size="2">&nbsp;If
+    checked, unknown Tokens are spanned only if they are contained in the
+    gazetteer list. Otherwise, unknown Tokens are spanned only if they are not
+    contained in the gazetteer list.</font></li>
+</ul>
+<font face="Verdana" size="2"><b>Example:</b> Assume applying Token sequence
+reasoning over the text passage below, using &quot;person&quot; Annotations as
+the source type, spanning a maximum of 2 Tokens (Annotations marked with XML
+tags):<br>
+&nbsp; &quot;&lt;person&gt;Jacky Kennedy Onassis&lt;/person&gt; was the wife of
+John F. Kennedy. I have read that at the bookstore of &lt;person&gt;John
+Monroe&lt;person&gt; around the corner.&quot;<br>
+The Tokens collected from the &quot;person&quot; Annotations would be {&quot;Jacky&quot;,
+&quot;John&quot;, &quot;Kennedy&quot;, &quot;Monroe&quot;, &quot;Onassis&quot;}.
+Of &quot;John F. Kennedy&quot;, &quot;John&quot; and &quot;Kennedy&quot; are
+known Tokens now, and since we span 2 Tokens at maximum, &quot;F.&quot; will
+bespanned, resulting in &quot;John F. Kennedy&quot; being annotated as a person.</font>
+<h4><font face="Verdana">Annotation Joining</font></h4>
+<font face="Verdana" size="2">Annotation joining works pretty similar to Token
+sequence reasoning, except for the fact that it does not span unknown Tokens
+between known Tokens, but only between Annotations of the source type. It also
+can use a gazetteer list to filter the unknown Tokens. The parameters for Token
+sequence reasoning are:</font>
+<ul>
+  <li><b><font face="Verdana" size="2">Source Type:</font></b><font face="Verdana" size="2">&nbsp;The
+    type of the Annotations to join.</font></li>
+  <li><b><font face="Verdana" size="2">Case Sensitive:</font></b><font face="Verdana" size="2">&nbsp;Do
+    the gazetteer list lookups case sensitive or case insensitive.</font></li>
+  <li><b><font face="Verdana" size="2">Max Tokens to Span:</font></b><font face="Verdana" size="2">&nbsp;Maximum
+    number of unknown Tokens to span if standing between two Annotations of the
+    source type.</font></li>
+  <li><b><font face="Verdana" size="2">Token List:</font></b><font face="Verdana" size="2">&nbsp;Gazetteer
+    list (see Lists) for filtering the unknown Tokens (relevant only if prevoius
+    parameter &gt; 0).</font></li>
+  <li><b><font face="Verdana" size="2">Use List for Inclusion:</font></b><font face="Verdana" size="2">&nbsp;If
+    checked, unknown Tokens are spanned only if they are contained in the
+    gazetteer list. Otherwise, unknown Tokens are spanned only if they are not
+    contained in the gazetteer list.</font></li>
+</ul>
+<font face="Verdana" size="2"><b>Example:</b> Assume joining Annotations of type
+&quot;location&quot; in the Text passage below, spanning a maximum of 2 Token (Annotations
+marked with XML tags):<br>
+&nbsp; &quot;&lt;location&gt;Port of Spain&lt;/location&gt; is the capital of
+&lt;location&gt;Trinidad&lt;/location&gt; and &lt;location&gt;Tobago&lt;/location&gt;.&quot;<br>
+The Annotations marking &quot;Trinidad&quot; and &quot;Tobago&quot; would be
+joined, spanning the intermediate &quot;and&quot;, and resulting in a single
+Annotation enclosing &quot;Trinidad and Tobago&quot;. The Annotations marking
+&quot;Port of Spain&quot; and &quot;Trinidad&quot;, however, would not be joined
+because between them, there are the four Tokens &quot;is&quot;, &quot;the&quot;,
+&quot;capital&quot;, and &quot;of&quot;, and we are spanning a maximum of 2
+Tokens.</font></body></html>

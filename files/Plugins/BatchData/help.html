@@ -1,0 +1,79 @@
+<html><head><title>Batches</title></head><body><h3><font face="Verdana">The Batches</font></h3>
+<font face="Verdana" size="2">Batches enable the GoldenGATE editor to process
+a list of files automatically, e.g. as an overnight job.</font>
+<h4><font face="Verdana">The Batches Menu</font></h4>
+<font size="2" face="Verdana">The Batches menu provides access to functions
+for managing and executing Batches:</font>
+<ul>
+  <li><b><font face="Verdana" size="2">Create:</font></b><font face="Verdana" size="2">&nbsp;Create
+    a new Batch by selecting a processor, a set of files, and a storage
+    destination.</font></li>
+  <li><b><font face="Verdana" size="2">Edit:</font></b><font face="Verdana" size="2">&nbsp;Open
+    the Batch management dialog.</font></li>
+  <li><b><font face="Verdana" size="2">Run:</font></b><font face="Verdana" size="2">&nbsp;Select
+    a Batch from a list and execute it.</font></li>
+</ul>
+<h4><font face="Verdana">The Edit Batches Dialog</font></h4>
+<font face="Verdana" size="2">The dialog for Batch management is accessible
+through the Edit function in the Batch menu. On the right of the dialog, a list
+displays all existing Batches. In the middle, a set of buttons allows changing
+the parameters of the Batch currently selected in that list:</font>
+<ul>
+  <li><b><font face="Verdana" size="2">&quot;Use ...&quot; Buttons:</font></b><font face="Verdana" size="2"><b>
+    </b>For every type of document processor accessible to GoldenGATE, a button
+    exists which opens a dialog for selecting the processor from a list
+    displaying all avalilable processors of the particular type.</font></li>
+  <li><font face="Verdana" size="2"><b>Processor:</b>&nbsp;Below the buttons, a label
+    displays the type and name of the processor currently selected.</font></li>
+  <li><b><font face="Verdana" size="2">Selected Document Writer:</font></b><font face="Verdana" size="2">&nbsp;The
+    Document Writer to use for storing the documents after they are processed.
+    The button to the right of the label opens a selector dialog.</font></li>
+  <li><b><font face="Verdana" size="2">Storage Destination:</font></b><font face="Verdana" size="2">&nbsp;The
+    button below displays the folder to store documents to after they are
+    processed. Clicking the button opens a dialog for selecting the folder.</font></li>
+  <li><b><font face="Verdana" size="2">File Table:</font></b><font face="Verdana" size="2">&nbsp;The
+    table displays the files the Batch handels. The right column provides the
+    status of each file.</font></li>
+  <li><font face="Verdana" size="2"><b>Add File(s):</b> Open a dialog for
+    selecting files. Selecting a folder will add all files contained in that
+    particular folder (excluding sub folders).</font></li>
+  <li><font face="Verdana" size="2"><b>Remove File(s):</b> Remove the files
+    selected in the table above the button.</font></li>
+</ul>
+<font face="Verdana" size="2">At the top of the dialog, a line of buttons
+provides the functionality for managing the Batches:</font>
+<ul>
+  <li><b><font face="Verdana" size="2">Create:</font></b><font face="Verdana" size="2">&nbsp;Open
+    a sub-dialog for creating a new Batch by selecting a source of Annotations
+    and adding the required parameters and the type for the Annotations.</font></li>
+  <li><b><font face="Verdana" size="2">Clone:</font></b><font face="Verdana" size="2">&nbsp;Clone
+    the Batch currently selected. This is pretty much the same as creating a new
+    one, beside the fact that the parameter values are copied.</font></li>
+  <li><b><font face="Verdana" size="2">Delete:</font></b><font face="Verdana" size="2">&nbsp;Delete
+    the Batch currently selected.</font></li>
+  <li><b><font face="Verdana" size="2">Run</font></b><b><font face="Verdana" size="2">:</font></b><font face="Verdana" size="2">&nbsp;Execute
+    the Batch currently selected.</font></li>
+</ul>
+<h4><font face="Verdana">The Run Batch Dialog</font></h4>
+<font size="2" face="Verdana">Clicking the Run button in the Batch management
+dialog will open a Run dialog for the Batch currently selected. This dialog
+allows controlling the Batch during execution.</font>
+<ul>
+  <li><b><font face="Verdana" size="2">File Label:</font></b><font face="Verdana" size="2">&nbsp;At
+    the top of the dialog, a label displays the file currently being processed.</font></li>
+  <li><b><font face="Verdana" size="2">Progress Bar:</font></b><font face="Verdana" size="2">&nbsp;</font><font face="Verdana" size="2">The
+    progress bar visualizes the share of the files already processed.</font></li>
+  <li><b><font face="Verdana" size="2">Interactive:</font></b><font face="Verdana" size="2">&nbsp;Checking
+    this box allows the processor to interact with the user if necessary,
+    unchecking it forces the processor to work fully automatically.</font></li>
+  <li><font face="Verdana" size="2"><b>Start Batch:</b> Start executing the
+    Batch (clickable when the Batch is stopped or paused).</font></li>
+  <li><font face="Verdana" size="2"><b>Pause Batch:</b> Pause executing the
+    Batch (clickable when the Batch is running).</font></li>
+  <li><font face="Verdana" size="2"><b>Stop Batch:</b> Stop executing the Batch
+    (clickable when the Batch is running).</font></li>
+  <li><font face="Verdana" size="2"><b>Reset batch:</b> Reset the Batch so
+    processing starts with the first file in the list (clickable when the Batch
+    is stopped).</font></li>
+</ul>
+</body></html>

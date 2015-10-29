@@ -1,0 +1,3 @@
+CLASS = "de.uka.ipd.idaho.goldenGate.plugin.analyzers.builtin.CharacterNormalizationChecker";
+CLASS_PATH = "CharacterNormalizer.jar";
+DATA_PATH = "CharacterNormalizerData/";

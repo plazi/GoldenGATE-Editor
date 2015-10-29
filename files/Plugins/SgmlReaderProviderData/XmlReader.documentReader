@@ -1,0 +1,3 @@
+IGNORE_TAGS = "";
+PARAGRAPH_TAGS = "br;hr;";
+PARSE_STYLE = "XML";

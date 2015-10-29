@@ -1,0 +1,52 @@
+<html><head><title>Document Readers</title></head><body><h3><font face="Verdana">The Document Readers</font></h3><font size="2" face="Verdana">The
+GoldenGATE editor uses Document Readers for loading documents. In marked-up data,
+they can filter and rename tags, and decide if a tag will be represented as a
+Document Part or as a plain Annotation.&nbsp;</font>
+<h4><font face="Verdana">The Document Readers Menu</font></h4>
+<font size="2" face="Verdana">The Document Readers menu is part of the Window
+menu in the GoldenGATE main window. It contains the functions for creating and
+managing Document Readers:</font>
+<ul>
+  <li><font face="Verdana" size="2"><b>Create:</b>&nbsp;Create a new Document
+    Reader.</font></li>
+  <li><font face="Verdana" size="2"><b>Edit:</b>&nbsp;Open the Document Reader editor
+    dialog.</font></li>
+</ul>
+<h4><font face="Verdana">The Edit Document Readers Dialog</font></h4>
+<font size="2" face="Verdana">The dialog for Document Reader management is
+accessible through the Edit function in the Document Reader menu. On the right
+of the dialog, a list displays all existing Document Readers. In the middle, it
+displays the configuration of the Document Reader currently selected in that list,
+which consists of four parts.</font><font size="2" face="Verdana">:</font>
+<ul>
+  <li><font face="Verdana" size="2"><b> Paragraph Tags:</b> This list defines which tags should be considered paragraph-like structures, i.e. at the end of which tags the text should have a line break. In case of a Document Reader for HTML, this list might contain "tr", for instance, in order to have line breaks at the end of what originally was a table
+    row.</font></li>
+  <li><font face="Verdana" size="2"><b> Ignore Tags:</b> A list of tag names to be filtered out.  In case of a Document Reader for HTML, this list might contain "font", "b", etc., for instance, in order to remove layout information, which might not be a desired part of the resulting
+    document.</font></li>
+  <li><font face="Verdana" size="2"><b> Tag Mappings:</b> The tag mapping table provides a list of renamings, where the element name in the "Mapped Tag" column is renamed to the element name in the "Mapping Target" column. In case of a Document Reader for HTML, this list might map "p" to "paragraph", for instance, in order to unify the element names of paragraphs. In addition to the table, the tab provides two buttons for managing the mappings, and a
+    checkbox:
+    </font>
+  <ul>
+    <li><font face="Verdana" size="2"><b>Add Mapping:</b> Add a new mapping to the table. This will prompt for a "Mapped Tag", the "Mapping Target" can be entered in the table afterward.</font></li>
+    <li><font face="Verdana" size="2"><b>Remove Mapping:</b> Remove the mapping currently selected in the table.</font></li>
+    <li><font face="Verdana" size="2"><b>Use HTML Parse Style:</b> Checking this box switches parsing to a rather tolerant, error correcting mode, which is eligible for third party web content, unchecking it switches to a restrictive parsing style that requires well-formed XML.</font></li>
+    </ul>
+  </li>
+  <li><font face="Verdana" size="2"><b> Document Part Tags:</b> This list defines which tags will be represented as Document Parts instead of plain Annotations. In case of a Document Reader for HTML, this list might contain "p", for instance, in order to make paragraphs editable units of their
+    own.</font></li>
+  <li><font face="Verdana" size="2"><b> File Types:</b> This list defines the file types (file name extensions in the file system) GoldenGATE should apply this particular Document Reader to. In case of a Document Reader for HTML, this list might contain "html" and "htm", for instance. Attention: Since there can be only one default Document Reader for each file type, adding a new file type to a Document Reader might change the document loading behavior of the GoldenGATE editor. In order to directly choose which Document Reader to apply for reading a particular file, check the "Use Custom Document Reader" box in the Load Document dialog.</font></li>
+</ul>
+<font size="2" face="Verdana">At
+the top of the dialog, a line of buttons provides the functionality for managing
+the Document </font><font size="2" face="Verdana">Reader:</font>
+<ul>
+  <li><b><font face="Verdana" size="2">Create:</font></b><font face="Verdana" size="2">&nbsp;Open
+    a sub-dialog for creating a new Document Reader.</font></li>
+  <li><b><font face="Verdana" size="2">Clone:</font></b><font face="Verdana" size="2">&nbsp;Clone
+    the Document Reader currently selected. This is pretty much the same as
+    creating a new one, beside the fact that the parameters of the cloned one
+    are copied.</font></li>
+  <li><b><font face="Verdana" size="2">Delete:</font></b><font face="Verdana" size="2">&nbsp;Delete
+    the Document Reader currently selected.</font></li>
+</ul>
+</body></html>
